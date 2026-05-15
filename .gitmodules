@@ -1,0 +1,6 @@
+[submodule "notiflux-frontend"]
+	path = notiflux-frontend
+	url = https://github.com/mdao032/notiflux-frontend.git
+[submodule "notiflux-backend"]
+	path = notiflux-backend
+	url = https://github.com/mdao032/notiflux-backend.git
