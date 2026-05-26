@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/notiflux.iml" filepath="$PROJECT_DIR$/.idea/notiflux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/notirux.iml" filepath="$PROJECT_DIR$/.idea/notirux.iml" />
     </modules>
   </component>
 </project>

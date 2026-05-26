@@ -1,9 +1,9 @@
-name: notiflux
+name: notirux
 services:
-  # ===== BASE DE DONNÉES PostgreSQL =====
+  # ===== BASE DE DONNï¿½ES PostgreSQL =====
   postgres:
     image: postgres:16-alpine
-    container_name: notiflux-postgres
+    container_name: notirux-postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${DB_NAME}
@@ -21,12 +21,12 @@ services:
   # ===== BACKEND Spring Boot =====
   backend:
     build:
-      context: ./notiflux-backend
+      context: ./notirux-backend
       dockerfile: Dockerfile
-    container_name: notiflux-backend
+    container_name: notirux-backend
     restart: unless-stopped
     env_file:
-      - ./notiflux-backend/.env
+      - ./notirux-backend/.env
     environment:
       SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-prod}
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:${DB_PORT}/${DB_NAME}
@@ -38,9 +38,9 @@ services:
   # ===== FRONTEND Angular (Nginx) =====
   frontend:
     build:
-      context: ./notiflux-frontend
+      context: ./notirux-frontend
       dockerfile: Dockerfile
-    container_name: notiflux-frontend
+    container_name: notirux-frontend
     restart: unless-stopped
     ports:
       - "80:80"
@@ -48,4 +48,4 @@ services:
       - backend
 volumes:
   postgres_data:
-    name: notiflux-postgres-data
+    name: notirux-postgres-data
